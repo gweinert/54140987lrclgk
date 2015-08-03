@@ -1,0 +1,17 @@
+<h1>Create New Playlist</h1>
+
+<%= form_for @playlist do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :user_id %>
+  <%= f.collection_select(:user_id, @users, :id, :name ) %>
+
+  <%= f.fields_for :playlist_selections do |song_fields| %>
+    <%= song_fields.label :name %>
+    <%= song_fields.collection_check_boxes(:song_id, Song.all, :id, :name) %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
