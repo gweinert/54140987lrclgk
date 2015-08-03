@@ -17,7 +17,7 @@ class PlaylistsController < ApplicationController
 
   def create
     @playlist = Playlist.new(params_hash)
-    @playlist.song_ids = params[:playlist][:song_ids]
+    # @playlist.song_ids = params[:playlist][:song_ids]
     if @playlist.save
       flash[:success] = "Successfully created playlist"
       redirect_to playlists_path
@@ -38,7 +38,7 @@ class PlaylistsController < ApplicationController
 
   private
     def params_hash
-      params.require(:playlist).permit(:name, :user_id)
+      params.require(:playlist).permit(:name, :user_id, :song_ids => [])
     end
 
 end

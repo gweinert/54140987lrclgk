@@ -5,6 +5,6 @@ class Playlist < ActiveRecord::Base
   has_many :songs, :through => :playlist_selections, :dependent => :nullify
 
   validates :name, presence: true, uniqueness:true
-
+  validates :owner, presence: true
 
 end
