@@ -1,10 +1,10 @@
 class Playlist < ActiveRecord::Base
   
-  belongs_to :user
+  belongs_to :user, :dependent=> :destroy
   has_many :playlist_selections
-  has_many :songs, :through => :playlist_selections
+  has_many :songs, :through => :playlist_selections, :dependent => :nullify
 
-  accepts_nested_attributes_for :songs
-  # accepts_nested_attributes_for :playlist_selections
+  validates :name, presence: true, uniqueness:true
+
 
 end

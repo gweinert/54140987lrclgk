@@ -12,7 +12,8 @@
       <td><%= playlist.name %></td>
       <td><%= playlist.user.name %></td>
       <td><%= playlist.songs.count %></td>
-      <td><%= link_to "Edit", new_playlist_path  %></td>
+      <td><%= link_to "Edit", new_playlist_path(:id => playlist.id)  %></td>
+      <td><%= link_to "Delete", playlist_path(:id => playlist.id), method: :delete  %></td>
     </tr>
   <% end %>
 </table>

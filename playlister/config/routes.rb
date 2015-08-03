@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'playlists#index'
 
-  resources :playlists, only: [:index, :new, :create]
+  resources :playlists, only: [:index, :new, :create, :destroy] do
+    resources :plalist_selections
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
