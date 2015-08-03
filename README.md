@@ -30,6 +30,6 @@ Check out `db/schema.rb`. You'll see that there are users, songs, playlists and 
 
 3. Include the `new` and `create` controller actions. You do not need to write `edit` or `update` but the form should be reusable for EDIT.
 
-4. Make sure your associations are complete. Every playlist needs a unique name and an owner. Destroying a user should destroy their playlists. Destroying a playlist should remove the song associations.
+4. Make sure your associations are complete. Every playlist needs a unique name and an owner. Destroying a user should destroy their playlists. Destroying a playlist should remove the song associations.  *Note: Don't create any new controllers or migrations for these criteria*
 
 **Don't worry about styling!** It's going to be ugly, and that's okay.
